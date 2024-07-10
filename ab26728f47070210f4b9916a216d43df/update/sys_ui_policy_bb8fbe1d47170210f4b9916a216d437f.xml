@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <conditions table="x_1394074_leave_ma_leave_application">status=pending^EQ<item display_value="Pending" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="pending"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <description/>
+        <global>true</global>
+        <inherit>false</inherit>
+        <isolate_script>true</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>true</on_load>
+        <order>100</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>true</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+	//New Record case
+    if (g_form.isNewRecord()) {
+        g_form.setReadOnly('status', true);
+        g_form.setDisplay('days_of_leave', false); //hide Days of leave
+        g_form.setDisplay('manager_comments', false); //hide Manager Comments
+    }
+
+}]]></script_true>
+        <set_values/>
+        <short_description>Pending UI Policy</short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-09 05:01:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bb8fbe1d47170210f4b9916a216d437f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Pending UI Policy</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave Management Application" source="x_1394074_leave_ma">ab26728f47070210f4b9916a216d43df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave Management Application">ab26728f47070210f4b9916a216d43df</sys_scope>
+        <sys_update_name>sys_ui_policy_bb8fbe1d47170210f4b9916a216d437f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-09 06:58:59</sys_updated_on>
+        <table>x_1394074_leave_ma_leave_application</table>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_ui_policy>
+</record_update>

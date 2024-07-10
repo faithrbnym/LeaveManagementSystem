@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Dynamically change the display/behavior of fields based on certain conditions&#13;
+</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>false</isolate_script>
+        <messages/>
+        <name>Leave OnLoad</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+
+    // Get the current status of the leave request
+    var leaveStatus = g_form.getValue('status');
+    // Get the current user's sys_id and name
+    var currentUserSysId = g_user.userID;
+    var currentFullName = g_user.getFullName();
+
+    // target fields to manage
+    var managerFields = ['manager_comments', 'approve_btn', 'reject_btn'];
+    var employeeFields = ['start_date', 'end_date', 'leave_reason', 'days_of_leave'];
+    var halfdayFields = ['is_halfday', 'halfday_details'];
+    // Check if the current user has the 'manager' role
+    var currentUser = g_user.getUserName(); // Get current user's username
+    // Check if user has 'manager' role
+    var isManager = g_user.hasRole('x_1394074_leave_ma.leave_application_manager');
+    var isCommonUser = g_user.hasRole('x_1394074_leave_ma.leave_application_user');
+    //hide manager_email field
+    g_form.setDisplay('manager_email', true);
+    // set current logged-in user as the Requestor and his/her Manager
+    if (g_form.isNewRecord()) {
+        g_form.setValue('requestor', currentFullName);
+        //invoke script include to get manager
+        var ga = new GlideAjax('LeaveAppHelper');
+        ga.addParam('sysparm_name', 'getUserManagerInfo');
+        ga.addParam('userSysId', currentUserSysId);
+        ga.getXMLAnswer(function(response) {
+            if (response.length > 0) {
+                var json = JSON.parse(response);
+                g_form.setValue('manager', json.name);
+                g_form.setValue('manager_email', json.email);
+            }
+        });
+    } else if (!g_form.isNewRecord()) {
+        var leaveRequestor = g_form.getValue('requestor');
+        var jsonManagerRes = getManagerInfo();
+        if (!jsonManagerRes) {
+            g_form.setValue('manager', jsonManagerRes.name);
+            g_form.setValue('manager_email', jsonManagerRes.email);
+        }
+        // Adjust form based on status and role
+        switch (leaveStatus) {
+            case 'pending':
+                if (leaveRequestor == currentUserName) {
+                    setFieldsVisibility(managerFields, false);
+                    setFieldsVisibility(['withdrawal_date'], false);
+                } else if (isManager && jsonRes.userId() == currentUserSysId) {
+                    setFieldsVisibility(managerFields, true);
+                    setFieldsReadOnly(employeeFields);
+                    if (g_form.getValue('is_halfday')) {
+                        setFieldsReadOnly(halfdayFields, true);
+                        setFieldsVisibility(halfdayFields, true);
+                    }
+                }
+                break;
+            case 'approved' || 'rejected':
+                if (leaveRequestor == currentUserName) {
+                    setFieldsReadOnly(employeeFields);
+                    setFieldsVisibility(managerFields, false);
+                    setFieldsReadOnly(['manager_comments'], true);
+                    setFieldsVisibility(['manager_comments'], true);
+                    setFieldsVisibility(['withdrawal_date'], false);
+                    if (g_form.getValue('is_halfday') == true) {
+                        setFieldsReadOnly(halfdayFields, true);
+                        setFieldsVisibility(halfdayFields, true);
+                    }
+                }
+
+                break;
+            case 'withdrawn':
+                if (leaveRequestor == currentUserName) {
+                    setFieldsReadOnly(employeeFields);
+                    setFieldsVisibility(managerFields, false);
+                    setFieldsReadOnly(['withdrawal_date'], true);
+                    setFieldsVisibility(['withdrawal_date'], true);
+                    if (g_form.getValue('is_halfday') == true) {
+                        setFieldsReadOnly(halfdayFields, true);
+                        setFieldsVisibility(halfdayFields, true);
+                    }
+                }
+                break;
+        }
+
+    }
+
+}
+
+// get manager
+function getManagerInfo() {
+    //invoke script include to get manager
+    var ga = new GlideAjax('LeaveAppHelper');
+    ga.addParam('sysparm_name', 'getUserManagerInfo');
+    ga.addParam('userSysId', currentUserSysId);
+    // ga.getXMLAnswer(function(managerSysId) {
+    //     if (managerSysId) {
+    //         g_form.setValue('manager', managerSysId);
+    //     }
+    ga.getXMLAnswer(function(response) {
+        if (response.length > 0) {
+            var json = JSON.parse(response);
+            return json;
+        } else {
+            return '';
+        }
+    });
+}
+//show or hide fields
+function setFieldsVisibility(fields, visible) {
+    fields.forEach(function(field) {
+        g_form.setDisplay(field, visible);
+    });
+}
+
+//get current date without time
+function getCurrentDate() {
+    var now = new GlideDateTime();
+    var date = new GlideDate();
+    date.setDisplayValue(now.getLocalDate().getDisplayValue());
+    return date;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-03 07:55:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>307d2c6f47438210f4b9916a216d435c</sys_id>
+        <sys_mod_count>46</sys_mod_count>
+        <sys_name>Leave OnLoad</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave Management Application" source="x_1394074_leave_ma">ab26728f47070210f4b9916a216d43df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave Management Application">ab26728f47070210f4b9916a216d43df</sys_scope>
+        <sys_update_name>sys_script_client_307d2c6f47438210f4b9916a216d435c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-10 07:37:57</sys_updated_on>
+        <table>x_1394074_leave_ma_leave_application</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

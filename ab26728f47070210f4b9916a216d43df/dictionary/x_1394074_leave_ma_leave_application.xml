@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="92b7720347470210f4b9916a216d43ef" label="Leave Application" max_length="40" name="x_1394074_leave_ma_leave_application" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Leave Reason" mandatory="true" max_length="120" name="leave_reason" type="string"/>
+        <element label="Manager" mandatory="true" max_length="32" name="manager" read_only="true" reference="sys_user" reference_qual="roles=x_1394074_leave_ma.leave_application_manager^EQ" reference_qual_condition="roles=x_1394074_leave_ma.leave_application_manager^EQ" type="reference"/>
+        <element label="Start Date" mandatory="true" max_length="32" name="start_date" type="glide_date"/>
+        <element choice="3" default="am" label="Halfday Details" max_length="40" name="halfday_details" type="choice" use_dependent_field="true">
+            <choice>
+                <element inactive_on_update="false" label="Afternoon" sequence="0" value="pm"/>
+                <element inactive_on_update="false" label="Morning" sequence="1" value="am"/>
+            </choice>
+        </element>
+        <element label="Requestor" max_length="32" name="requestor" read_only="true" reference="sys_user" reference_qual="roles=x_1394074_leave_ma.leave_application_user^EQ" reference_qual_condition="roles=x_1394074_leave_ma.leave_application_user^EQ" type="reference"/>
+        <element label="Manager Comments" max_length="450" name="manager_comments" type="string"/>
+        <element label="Withdrawal Date" max_length="40" name="withdrawal_date" read_only="true" type="glide_date"/>
+        <element label="End date" mandatory="true" max_length="40" name="end_date" type="glide_date"/>
+        <element label="Is Halfday" max_length="40" name="is_halfday" type="boolean"/>
+        <element choice="3" default="pending" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Rejected" value="rejected"/>
+                <element inactive_on_update="false" label="Approved" value="approved"/>
+                <element inactive_on_update="false" label="Pending" value="pending"/>
+                <element inactive_on_update="false" label="Withdrawn" value="withdrawn"/>
+            </choice>
+        </element>
+        <element label="Manager Email" max_length="100" name="manager_email" read_only="true" type="string"/>
+        <element default="0" label="Days of Leave" max_length="40" name="days_of_leave" type="integer"/>
+        <element label="Approval Date" max_length="40" name="approval_date" read_only="true" type="glide_date"/>
+        <index name="index">
+            <element name="manager"/>
+        </index>
+        <index name="index2">
+            <element name="requestor"/>
+        </index>
+        <index name="index3">
+            <element name="start_date"/>
+        </index>
+    </element>
+</database>

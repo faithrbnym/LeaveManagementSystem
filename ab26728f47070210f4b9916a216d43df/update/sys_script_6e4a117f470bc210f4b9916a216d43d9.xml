@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1394074_leave_ma_leave_application</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1394074_leave_ma_leave_application">start_dateISNOTEMPTY^end_dateISNOTEMPTY^status=pending^EQ<item endquery="false" field="start_date" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
+            <item endquery="false" field="end_date" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
+            <item display_value="Pending" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="pending"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Leave Dates Rules</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    var leaveUtils = new LeaveUtils();
+    var isStartDatePast = leaveUtils.isDatePast(current.start_date);
+    var isValidLeaveDates = leaveUtils.isValidStartAndEndDate(current.start_date, current.end_date);
+
+    // Start Date checking if its in the past
+    if (isStartDatePast == true) {
+        gs.addErrorMessage("Start Date cannot be in the past.  Your request has not been saved to the database.");
+        current.setAbortAction(true);
+    }
+    // Start and End Date validation checking
+    if (isValidLeaveDates == false) {
+        gs.addErrorMessage('End Date must be after Start Date or same value with Start Date');
+        current.setAbortAction(true);
+    } else {
+        //calculate leave days
+        var daysCount = leaveUtils.calculateLeaveDays(current.start_date, current.end_date);
+        // set the calculated number of days
+        g_form.setValue('days_of_leave', daysCount);
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-04 09:20:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6e4a117f470bc210f4b9916a216d43d9</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Leave Dates Rules</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave Management Application" source="x_1394074_leave_ma">ab26728f47070210f4b9916a216d43df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave Management Application">ab26728f47070210f4b9916a216d43df</sys_scope>
+        <sys_update_name>sys_script_6e4a117f470bc210f4b9916a216d43d9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-09 06:17:43</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=6e4a117f470bc210f4b9916a216d43d9"/>
+</record_update>

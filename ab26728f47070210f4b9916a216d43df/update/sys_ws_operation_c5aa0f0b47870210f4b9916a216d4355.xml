@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>POST</http_method>
+        <name>Leave Appplication POST</name>
+        <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    // implement resource here
+    var requestBody = request.body.data;
+    var leaveApplication = new GlideRecord("x_1394074_leave_ma_leave_application");
+    leaveApplication.initialize();
+    leaveApplication.requested_by = requestBody.requested_by;
+    leaveApplication.manager = requestBody.manager;
+    leaveApplication.start_date = requestBody.start_date;
+    leaveApplication.end_date = requestBody.end_date;
+    leaveApplication.leave_reason = requestBody.leave_reason;
+    leaveApplication.status = 'pending'; //pending
+    leaveApplication.insert(); //insert new data
+
+    //response body
+    response.setStatus(201);
+    response.setBody({
+        status: 'success',
+        message: 'Leave application submitted successfully.'
+    });
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_1394074_leave_ma/leaveapplicationapi</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-02 06:14:57</sys_created_on>
+        <sys_id>c5aa0f0b47870210f4b9916a216d4355</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Leave Appplication POST</sys_name>
+        <sys_package display_value="Leave Management Application" source="x_1394074_leave_ma">ab26728f47070210f4b9916a216d43df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave Management Application">ab26728f47070210f4b9916a216d43df</sys_scope>
+        <sys_update_name>sys_ws_operation_c5aa0f0b47870210f4b9916a216d4355</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-02 06:29:27</sys_updated_on>
+        <web_service_definition display_value="LeaveApplicationAPI">54a907c747870210f4b9916a216d43f8</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="dbdeb20b47470210f4b9916a216d43a5" sys_domain="global" table="x_1394074_leave_ma_leave_application" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>1f1f40b9479f4210f4b9916a216d4378</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>requestor</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>971f40b9479f4210f4b9916a216d4379</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>leave_reason</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>1f1f40b9479f4210f4b9916a216d4379</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>approval_date</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>931f40b9479f4210f4b9916a216d437a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>withdrawal_date</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>1b1f40b9479f4210f4b9916a216d437a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>manager_comments</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>9f1f40b9479f4210f4b9916a216d437a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>171f40b9479f4210f4b9916a216d437b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>manager</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>9b1f40b9479f4210f4b9916a216d437b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>manager_email</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>131f40b9479f4210f4b9916a216d437c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>days_of_leave</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>971f40b9479f4210f4b9916a216d437c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>start_date</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>1f1f40b9479f4210f4b9916a216d437c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>end_date</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>931f40b9479f4210f4b9916a216d437d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>status</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>1b1f40b9479f4210f4b9916a216d437d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>is_halfday</element>
+            <position>13</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>9f1f40b9479f4210f4b9916a216d437d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>halfday_details</element>
+            <position>14</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-10 05:27:09</sys_created_on>
+            <sys_id>171f40b9479f4210f4b9916a216d437e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1394074_leave_ma_leave_application" sys_domain="global" view="Default view">dbdeb20b47470210f4b9916a216d43a5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-10 05:27:09</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_1394074_leave_ma_leave_application</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-02 05:11:43</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>dbdeb20b47470210f4b9916a216d43a5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1394074_leave_ma_leave_application</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Leave Management Application" source="x_1394074_leave_ma">ab26728f47070210f4b9916a216d43df</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Leave Management Application">ab26728f47070210f4b9916a216d43df</sys_scope>
+            <sys_update_name>sys_ui_section_dbdeb20b47470210f4b9916a216d43a5</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-02 05:11:43</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
